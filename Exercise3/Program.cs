@@ -1,6 +1,6 @@
-﻿class Exercise2
+﻿class Exercise3
 {
-    //an exerise using recursion to print out all possible number combinations of 1 to n with repetition allowed
+    //an exerise using recursion to print out all possible number combinations of 12345 without repetition allowed
     static int[] vals;
     static int k;
     static void Main()
@@ -16,23 +16,27 @@
         else
         {
             vals = new int[n];
-            NestedLoops(0);
+                NestedLoops(0);
         }
     }
 
+    static int ewo = 1;//Easy way out <3
+
     static void NestedLoops(int count)
     {
+       
         if (count == k)
         {
             PrintLoops();
             return;
         }
 
-        for (int i = 1; i <= vals.Length; i++)
+        for (int i = ewo; i <= vals.Length; i++)
         {
             vals[count] = i;
             NestedLoops(count + 1);
         }
+        ewo++;
     }
 
     static void PrintLoops()
